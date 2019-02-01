@@ -11,28 +11,39 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2">Latest Release</span>
       </v-btn>
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <ToDo v-bind:todos="todos"></ToDo>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import ToDo from './components/ToDo'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ToDo
   },
   data () {
     return {
-      //
+      todos: [{
+        title: 'Do some homeworks',
+        description: 'Code the Todo App in Vue.Js',
+        id: 0
+      }, {
+        title: 'Clean the car',
+        description: 'Clean and repair the Opel Corsa',
+        id: 1
+      }, {
+        title: 'Buys some food',
+        description: 'Buy some pasta and some sauce',
+        id: 2
+      }]
     }
   }
 }
+
 </script>
